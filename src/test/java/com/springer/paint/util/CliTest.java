@@ -1,6 +1,5 @@
 package com.springer.paint.util;
 
-import com.springer.paint.Cli;
 import com.springer.paint.component.*;
 import org.junit.*;
 import org.junit.contrib.java.lang.system.TextFromStandardInputStream;
