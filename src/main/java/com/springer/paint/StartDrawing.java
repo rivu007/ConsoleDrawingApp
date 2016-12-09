@@ -29,7 +29,7 @@ public class StartDrawing {
             if(shape != null) {
                 shapes.add(shape);
                 Collections.reverse(shapes);
-                shapes.forEach(Shape::draw);
+                shapes.parallelStream().forEach(Shape::draw);
             }
         }
     }

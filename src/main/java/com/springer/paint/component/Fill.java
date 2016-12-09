@@ -33,12 +33,12 @@ public class Fill extends ShapeDecorator {
         int y = Integer.parseInt(args[1]);
         String color = args[2];
 
-        if(x < 0 ||  x > getCanvas().getWIDTH()){
-            throw new ValidationException("Validation Exception: x:"+ x + " co-ordinate can't be non negative or greater than canvas width: " + getCanvas().getWIDTH());
+        if(x < 1 ||  x > getCanvas().getWIDTH()){
+            throw new ValidationException("Validation Exception: x:"+ x + " co-ordinates should be greater than 1 and less than canvas width: " + getCanvas().getWIDTH());
         }
 
-        if(y < 0 ||  y > getCanvas().getHEIGHT()){
-            throw new ValidationException("Validation Exception: y:"+ y + " co-ordinate can't be non negative or greater than canvas height: " + getCanvas().getHEIGHT());
+        if(y < 1 ||  y > getCanvas().getHEIGHT()){
+            throw new ValidationException("Validation Exception: y:"+ y + " co-ordinates should be greater than 1 and less than canvas height: " + getCanvas().getHEIGHT());
         }
 
         this.x = x;

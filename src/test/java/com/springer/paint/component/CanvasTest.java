@@ -32,7 +32,7 @@ public class CanvasTest {
     }
 
     @Test(expected = IllegalArgumentException.class)
-    public void canvas_initCanvasWithoutParam_valitationErrorIsShown() throws Exception {
+    public void canvas_initCanvasWithoutParam_validationErrorIsShown() throws Exception {
         canvas = new Canvas();
     }
 

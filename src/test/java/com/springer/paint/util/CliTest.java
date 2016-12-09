@@ -67,10 +67,10 @@ public class CliTest {
 
     @Test()
     public void parse_lineWidthGreaterThanCanvasWidth_showsValidationException() throws Exception {
-        systemInMock.provideLines("L 21 25 21 30");
+        systemInMock.provideLines("L 11 2 11 4");
         Cli.setCanvas(new Canvas(10,4));
         Cli.parse();
-        String expectedMessage = "Validation Exception: x1:21, x2:21 co-ordinates can't be non negative or greater than canvas width: 10";
+        String expectedMessage = "Validation Exception: x1:11, x2:11 co-ordinates should be greater than 1 and less than canvas width: 10";
 
         assertTrue(outContent.toString().contains(expectedMessage));
     }
@@ -96,10 +96,10 @@ public class CliTest {
 
     @Test()
     public void parse_rectangleWidthGreaterThanCanvasWidth_ValidationExceptionMessageIsShown() throws Exception {
-        systemInMock.provideLines("R 50 60 70 80");
+        systemInMock.provideLines("R 1 1 5 4");
         Cli.setCanvas(new Canvas(4,4));
         Cli.parse();
-        String expectedMessage = "Enter command:Sorry! can't parse the entered value. Try again: Validation Exception: x1: 50, x2: 70 co-ordinates can't be non negative or greater than canvas width: 4";
+        String expectedMessage = "Enter command:Sorry! can't parse the entered value. Try again: Validation Exception: x1: 1, x2: 5 co-ordinates should be greater than 1 and less than canvas width: 4";
 
         assertTrue(outContent.toString().contains(expectedMessage));
     }
@@ -124,10 +124,10 @@ public class CliTest {
 
     @Test()
     public void parse_fillWidthGreaterThanCanvasWidth_ValidationExceptionMessageIsShown() throws Exception {
-        systemInMock.provideLines("B 50 60 c");
+        systemInMock.provideLines("B 5 3 c");
         Cli.setCanvas(new Canvas(4,4));
         Cli.parse();
-        String expectedMessage = "Validation Exception: x:50 co-ordinate can't be non negative or greater than canvas width: 4";
+        String expectedMessage = "Validation Exception: x:5 co-ordinates should be greater than 1 and less than canvas width: 4";
 
         assertTrue(outContent.toString().contains(expectedMessage));
     }

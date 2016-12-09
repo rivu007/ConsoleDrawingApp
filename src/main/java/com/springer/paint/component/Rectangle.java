@@ -31,12 +31,12 @@ public class Rectangle extends ShapeDecorator {
         int x2 = args[2];
         int y2 = args[3];
 
-        if(x1 < 0 || x2 < 0 || x1 > getCanvas().getWIDTH() || x2 > getCanvas().getWIDTH()){
-            throw new ValidationException("Validation Exception: x1: "+ x1 + ", x2: "+ x2 + " co-ordinates can't be non negative or greater than canvas width: " + getCanvas().getWIDTH());
+        if(x1 < 1 || x2 < 0 || x1 > getCanvas().getWIDTH() || x2 > getCanvas().getWIDTH()){
+            throw new ValidationException("Validation Exception: x1: "+ x1 + ", x2: "+ x2 + " co-ordinates should be greater than 1 and less than canvas width: " + getCanvas().getWIDTH());
         }
 
-        if(y1 < 0 || y2 < 0 || y1 > getCanvas().getHEIGHT() || y2 > getCanvas().getHEIGHT()){
-            throw new ValidationException("Validation Exception: y1: "+ y1 + ", y2: "+ y2 + " co-ordinates can't be non negative or greater than canvas height: " + getCanvas().getHEIGHT());
+        if(y1 < 1 || y2 < 0 || y1 > getCanvas().getHEIGHT() || y2 > getCanvas().getHEIGHT()){
+            throw new ValidationException("Validation Exception: y1: "+ y1 + ", y2: "+ y2 + " co-ordinates should be greater than 1 and less than canvas height: " + getCanvas().getHEIGHT());
         }
 
         this.x1 = x1;
