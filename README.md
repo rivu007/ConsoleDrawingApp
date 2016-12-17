@@ -91,6 +91,7 @@ or to package this app:
 
 ## How to run the test case:
 The app is covered with 28 test cases.
+
 1. Run `mvn test` at the root of the repository, where the pom.xml file is located.
 2. Checkout the console log for the detailed report.
 
